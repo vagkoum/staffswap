@@ -28,7 +28,7 @@ export default function Layout() {
       <nav className="navbar">
         <div className="navbar-inner">
           <NavLink to="/" className="nav-logo">
-            {TRADE_CONFIG.platformName.replace('Swap', '')}<span>Swap</span>
+            {TRADE_CONFIG.platformName}<span>Swap</span>
           </NavLink>
 
           <NavLink to="/browse" className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}>
