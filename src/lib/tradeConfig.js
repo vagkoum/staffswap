@@ -6,7 +6,7 @@
 
 export const TRADE_CONFIG = {
   // The name of your platform
-  platformName: 'StaffSwap',
+  platformName: 'Chiron',
 
   // What is a single listing called? (singular and plural)
   listingName: 'listing',
