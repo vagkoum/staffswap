@@ -2,17 +2,17 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --green: #1D9E75;
-  --green-dark: #0F6E56;
-  --green-light: #E1F5EE;
-  --green-mid: #5DCAA5;
-  --text: #1a1a1a;
+  --green: #2D4A5A;
+  --green-dark: #1a2f3a;
+  --green-light: #dde8ed;
+  --green-mid: #4a7a8a;
+  --text: #1a2f3a;
   --text-muted: #6b6b6b;
   --text-faint: #9b9b9b;
-  --bg: #f7f7f5;
-  --bg-card: #ffffff;
-  --border: rgba(0,0,0,0.1);
-  --border-strong: rgba(0,0,0,0.18);
+  --bg: #ecdfc6;
+  --bg-card: #f5ede0;
+  --border: rgba(45,74,90,0.12);
+  --border-strong: rgba(45,74,90,0.22);
   --radius: 10px;
   --radius-sm: 6px;
   --radius-lg: 14px;
