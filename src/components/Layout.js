@@ -28,7 +28,7 @@ export default function Layout() {
       <nav className="navbar">
         <div className="navbar-inner">
           <NavLink to="/" className="nav-logo">
-           <img src="/logo.png" alt="Chiron" style={{height: '36px', width: 'auto', objectFit: 'contain'}} />
+           <img src="/logo.png" alt="Chiron" style={{height: '60px', width: 'auto', objectFit: 'contain'}} />
           </NavLink>
 
           <NavLink to="/browse" className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}>
