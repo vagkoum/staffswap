@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="hero" style={{background: '#f8f2e8'}}>
+      <div className="hero" style={{background: '#faf5ee'}}>
         <h1><em>{TRADE_CONFIG.heroTagline.split(',')[0]}</em>{TRADE_CONFIG.heroTagline.includes(',') ? ',' + TRADE_CONFIG.heroTagline.split(',').slice(1).join(',') : ''}</h1>
         <p>{TRADE_CONFIG.heroSubtitle}</p>
         <div className="hero-actions">
