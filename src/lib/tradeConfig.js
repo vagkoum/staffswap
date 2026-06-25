@@ -13,8 +13,8 @@ export const TRADE_CONFIG = {
   listingNamePlural: 'listings',
 
   // The main noun being traded (e.g. "staff", "shift", "service", "skill")
-  tradeNoun: 'staff',
-  tradeNounPlural: 'staff members',
+  tradeNoun: 'idea',
+  tradeNounPlural: 'ideas',
 
   // Label for the "what you offer" field
   offerLabel: 'Who or what are you offering?',
