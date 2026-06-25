@@ -28,7 +28,7 @@ export default function Layout() {
       <nav className="navbar">
         <div className="navbar-inner">
           <NavLink to="/" className="nav-logo">
-            {TRADE_CONFIG.platformName}<span>Swap</span>
+           <img src="/logo.png" alt="Chiron" style={{height: '36px'}} />
           </NavLink>
 
           <NavLink to="/browse" className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}>
