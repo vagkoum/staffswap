@@ -67,12 +67,13 @@ export default function Messages() {
       content: newMsg.trim(),
       read: false,
     }).select().single()
-    console.log('Message insert result:', data, error)
     if (!error && data) {
       setMessages(m => [...m, data])
       setNewMsg('')
-    } else {
-      alert('Error: ' + (error?.message || 'Unknown error'))
+      // Send email notification
+      supabase.functions.invoke('notify-message', {
+        body: { record: data }
+      })
     }
     setSending(false)
   }
