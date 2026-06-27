@@ -158,7 +158,13 @@ export default function Messages() {
                   placeholder="Type a message…"
                   value={newMsg}
                   onChange={e => setNewMsg(e.target.value)}
-                  onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage() } }}
+                  onKeyDown={e => { 
+  if (e.key === 'Enter' && !e.shiftKey) { 
+    e.preventDefault(); 
+    e.stopPropagation();
+    sendMessage(); 
+  } 
+}}
                 />
                 <button className="btn btn-primary btn-sm" onClick={sendMessage} disabled={sending || !newMsg.trim()}>
                   Send
