@@ -72,6 +72,7 @@ export default function Messages() {
       setNewMsg('')
       // Send email notification
       // Send email notification
+// Send email notification
 fetch(`https://fnqkylgekrnpvczbivzh.supabase.co/functions/v1/notify-message`, {
   method: 'POST',
   headers: {
