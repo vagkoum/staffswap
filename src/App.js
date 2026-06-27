@@ -10,6 +10,7 @@ import Messages from './pages/Messages'
 import Profile from './pages/Profile'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Admin from './pages/Admin'
 import './styles.css'
 
 function PrivateRoute({ children }) {
@@ -34,6 +35,7 @@ export default function App() {
             <Route path="messages" element={<PrivateRoute><Messages /></PrivateRoute>} />
             <Route path="messages/:threadId" element={<PrivateRoute><Messages /></PrivateRoute>} />
             <Route path="profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+            <Route path="admin" element={<PrivateRoute><Admin /></PrivateRoute>} />
           </Route>
         </Routes>
       </BrowserRouter>
