@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import { useAuth } from '../lib/AuthContext'
+import { ReviewForm, ReviewList } from '../components/Reviews'
 
 export default function ListingDetail() {
   const { id } = useParams()
@@ -9,6 +10,7 @@ export default function ListingDetail() {
   const navigate = useNavigate()
   const [listing, setListing] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [refreshReviews, setRefreshReviews] = useState(0)
 
   useEffect(() => {
     supabase
@@ -21,7 +23,6 @@ export default function ListingDetail() {
 
   async function handleContact() {
     if (!user) { navigate('/login'); return }
-    // Create or find existing thread
     const { data: existing } = await supabase
       .from('message_threads')
       .select('id')
@@ -100,6 +101,15 @@ export default function ListingDetail() {
         {isOwn && (
           <div style={{ textAlign: 'center', fontSize: '13px', color: 'var(--text-muted)', padding: '8px' }}>This is your listing.</div>
         )}
+
+        {/* Reviews Section */}
+        <hr className="divider" />
+        <ReviewList reviewedId={listing.user_id} key={refreshReviews} />
+        <ReviewForm
+          reviewedId={listing.user_id}
+          listingId={listing.id}
+          onSubmitted={() => setRefreshReviews(r => r + 1)}
+        />
       </div>
     </div>
   )
