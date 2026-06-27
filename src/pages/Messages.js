@@ -77,7 +77,7 @@ fetch(`https://fnqkylgekrnpvczbivzh.supabase.co/functions/v1/notify-message`, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': `Bearer ${process.env.REACT_APP_SUPABASE_ANON_KEY}`,
+    'Authorization': `Bearer sb_publishable_zX1qS0QmH5RIkvOexSAYqQ_RqrzgYof`,
   },
   body: JSON.stringify({ record: data })
 })
