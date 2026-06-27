@@ -60,15 +60,17 @@ export default function Messages() {
     if (!newMsg.trim() || !activeThread) return
     setSending(true)
     const receiverId = activeThread.user1_id === user.id ? activeThread.user2_id : activeThread.user1_id
-    const { data } = await supabase.from('messages').insert({
+    const { data, error } = await supabase.from('messages').insert({
       thread_id: activeThread.id,
       sender_id: user.id,
       receiver_id: receiverId,
       content: newMsg.trim(),
       read: false,
     }).select().single()
-    setMessages(m => [...m, data])
-    setNewMsg('')
+    if (!error && data) {
+      setMessages(m => [...m, data])
+      setNewMsg('')
+    }
     setSending(false)
   }
 
