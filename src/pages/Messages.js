@@ -71,9 +71,15 @@ export default function Messages() {
       setMessages(m => [...m, data])
       setNewMsg('')
       // Send email notification
-      supabase.functions.invoke('notify-message', {
-        body: { record: data }
-      })
+      // Send email notification
+fetch(`https://fnqkylgekrnpvczbivzh.supabase.co/functions/v1/notify-message`, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${process.env.REACT_APP_SUPABASE_ANON_KEY}`,
+  },
+  body: JSON.stringify({ record: data })
+})
     }
     setSending(false)
   }
