@@ -159,12 +159,12 @@ export default function Messages() {
                   value={newMsg}
                   onChange={e => setNewMsg(e.target.value)}
                   onKeyDown={e => { 
-  if (e.key === 'Enter' && !e.shiftKey) { 
-    e.preventDefault(); 
-    e.stopPropagation();
-    sendMessage(); 
-  } 
-}}
+                    if (e.key === 'Enter' && !e.shiftKey) { 
+                      e.preventDefault(); 
+                      e.stopPropagation();
+                      sendMessage(); 
+                    } 
+                  }}
                 />
                 <button className="btn btn-primary btn-sm" onClick={sendMessage} disabled={sending || !newMsg.trim()}>
                   Send
