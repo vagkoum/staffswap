@@ -153,31 +153,31 @@ export default function Messages() {
                 <div ref={bottomRef} />
               </div>
               <div className="msg-footer">
-  <input
-    className="msg-input"
-    placeholder="Type a message…"
-    value={newMsg}
-    onChange={e => setNewMsg(e.target.value)}
-    onKeyDown={e => {
-      if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault();
-        e.stopPropagation();
-        if (!sending && newMsg.trim()) sendMessage();
-        return false;
-      }
-    }}
-  />
-  <button 
-    className="btn btn-primary btn-sm" 
-    type="button"
-    onClick={e => {
-      e.preventDefault();
-      sendMessage();
-    }} 
-    disabled={sending || !newMsg.trim()}>
-    Send
-  </button>
-</div>
+              <input
+                className="msg-input"
+                placeholder="Type a message…"
+                value={newMsg}
+                onChange={e => setNewMsg(e.target.value)}
+                onKeyDown={e => {
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (!sending && newMsg.trim()) sendMessage();
+                    return false;
+                  }
+                }}
+              />
+              <button 
+                className="btn btn-primary btn-sm" 
+                type="button"
+                onClick={e => {
+                  e.preventDefault();
+                  sendMessage();
+                }} 
+                disabled={sending || !newMsg.trim()}>
+                Send
+              </button>
+            </div>
             </>
           )}
         </div>
