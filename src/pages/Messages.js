@@ -73,13 +73,12 @@ export default function Messages() {
       // Send email notification
       // Send email notification
 // Send email notification
-fetch(`https://fnqkylgekrnpvczbivzh.supabase.co/functions/v1/notify-message`, {
+fetch(`/api/notify`, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': `Bearer sb_publishable_zX1qS0QmH5RIkvOexSAYqQ_RqrzgYof`,
   },
-  body: JSON.stringify({ record: data })
+  body: JSON.stringify({ receiverId: receiverId })
 })
     }
     setSending(false)
