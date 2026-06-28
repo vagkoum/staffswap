@@ -35,7 +35,7 @@ export default async function handler(req, res) {
         Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'onboarding@resend.dev',
+        from: 'noreply@chironevo.com',
         to: receiver.email,
         subject: 'You have a new message on Chiron!',
         html: `<p>Hi ${receiver.full_name || 'there'},</p><p>You have a new message on Chiron. Log in to reply!</p><br/><a href="https://chironevo.com/messages">Click here to view your messages</a>`,
