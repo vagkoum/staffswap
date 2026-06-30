@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import { useAuth } from '../lib/AuthContext'
 import { ReviewForm, ReviewList } from '../components/Reviews'
+import { ReportButton } from '../components/Report'
 
 export default function ListingDetail() {
   const { id } = useParams()
@@ -94,10 +95,15 @@ export default function ListingDetail() {
         </div>
 
         {!isOwn && (
-          <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }} onClick={handleContact}>
-            💬 Contact {name.split(' ')[0]}
-          </button>
-        )}
+  <>
+    <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }} onClick={handleContact}>
+      💬 Contact {name.split(' ')[0]}
+    </button>
+    <div style={{ textAlign: 'center', marginTop: '10px' }}>
+      <ReportButton reportedUserId={listing.user_id} listingId={listing.id} />
+    </div>
+  </>
+)}
         {isOwn && (
           <div style={{ textAlign: 'center', fontSize: '13px', color: 'var(--text-muted)', padding: '8px' }}>This is your listing.</div>
         )}
